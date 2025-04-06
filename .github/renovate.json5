@@ -25,6 +25,12 @@
   ],
   packageRules: [
     {
+      groupName: 'All GitHub Actions dependencies',
+      matchManagers: [
+        'github-actions'
+      ]
+    },
+    {
       groupName: 'Kotlin and compiler plugins',
       matchPackageNames: [
         'org.jetbrains.kotlin:**',
