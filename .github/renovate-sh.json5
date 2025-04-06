@@ -7,10 +7,10 @@
   onboardingBranch: 'github-renovate/configure',
   platform: 'github',
   autodiscover: true,
-  autodisoverFilter: [
+  autodiscoverFilter: [
     // TODO match the entire org's repos once done testing
     //    'rickbusarow/*',
     'rickbusarow/kotlin-gradle-extensions',
     'rickbusarow/rickbusarow-org-services'
-  ],
+  ]
 }
