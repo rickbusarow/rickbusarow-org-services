@@ -1,5 +1,19 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  customManagers: [
+    {
+      customType: 'regex',
+      datasourceTemplate: 'pnpm',
+      depNameTemplate: 'semantic-release',
+      description: 'Update semantic-release version used by npx',
+      fileMatch: [
+        '^\\.github/workflows/[^/]+\\.ya?ml$'
+      ],
+      matchStrings: [
+        '\\srun: npx semantic-release@(?<currentValue>.*?)\\s'
+      ]
+    }
+  ],
   extends: [
     'config:recommended',
     'config:best-practices',
@@ -9,41 +23,28 @@
     'dependencies',
     'automerge'
   ],
-  packageRules: [],
+  packageRules: [
+    {
+      groupName: 'Kotlin and compiler plugins',
+      matchPackageNames: [
+        'org.jetbrains.kotlin:**',
+        'com.google.devtools.ksp:**',
+        'com.square.anvil:**',
+        'dev.drewhamilton.poko:**'
+      ]
+    },
+    {
+      groupName: 'KtLint libs',
+      matchPackageNames: [
+        'com.pinterest.ktlint:**',
+        'com.rickbusarow.ktlint:**',
+        'com.rickbusarow.ktrules:**'
+      ]
+    }
+  ],
   rebaseLabel: 'rebase',
   rebaseWhen: 'auto',
-  semanticCommits: 'enabled',
   semanticCommitType: 'patch',
-  stopUpdatingLabel: 'renovate-ignore',
-  customManagers: [
-    {
-      customType: 'regex',
-      description: 'Update semantic-release version used by npx',
-      fileMatch: [
-        '^\\.github/workflows/[^/]+\\.ya?ml$'
-      ],
-      matchStrings: [
-        '\\srun: npx semantic-release@(?<currentValue>.*?)\\s'
-      ],
-      datasourceTemplate: 'pnpm',
-      depNameTemplate: 'semantic-release'
-    },
-    {
-      "matchPackageNames": [
-        "org.jetbrains.kotlin:**",
-        "com.google.devtools.ksp:**",
-        "com.square.anvil:**",
-        "dev.drewhamilton.poko:**"
-      ],
-      "groupName": "Kotlin and compiler plugins"
-    },
-    {
-      "matchPackageNames": [
-        "com.pinterest.ktlint:**",
-        "com.rickbusarow.ktlint:**",
-        "com.rickbusarow.ktrules:**"
-      ],
-      "groupName": "KtLint libs"
-    },
-  ]
+  semanticCommits: 'enabled',
+  stopUpdatingLabel: 'renovate-ignore'
 }
