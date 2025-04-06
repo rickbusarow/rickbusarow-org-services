@@ -1,0 +1,13 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  branchPrefix: 'github-renovate/',
+  dependencyDashboardTitle: 'Dependency Dashboard',
+  gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
+  onboarding: true,
+  onboardingBranch: 'github-renovate/configure',
+  platform: 'github',
+  autodiscover: true,
+  autodisoverFilter: [
+    'rickbusarow/kotlin-gradle-extensions'
+  ],
+}

@@ -1,0 +1,49 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'config:best-practices',
+    'default:disableRateLimiting'
+  ],
+  labels: [
+    'dependencies',
+    'automerge'
+  ],
+  packageRules: [],
+  rebaseLabel: 'rebase',
+  rebaseWhen: 'auto',
+  semanticCommits: 'enabled',
+  semanticCommitType: 'patch',
+  stopUpdatingLabel: 'renovate-ignore',
+  customManagers: [
+    {
+      customType: 'regex',
+      description: 'Update semantic-release version used by npx',
+      fileMatch: [
+        '^\\.github/workflows/[^/]+\\.ya?ml$'
+      ],
+      matchStrings: [
+        '\\srun: npx semantic-release@(?<currentValue>.*?)\\s'
+      ],
+      datasourceTemplate: 'pnpm',
+      depNameTemplate: 'semantic-release'
+    },
+    {
+      "matchPackageNames": [
+        "org.jetbrains.kotlin:**",
+        "com.google.devtools.ksp:**",
+        "com.square.anvil:**",
+        "dev.drewhamilton.poko:**"
+      ],
+      "groupName": "Kotlin and compiler plugins"
+    },
+    {
+      "matchPackageNames": [
+        "com.pinterest.ktlint:**",
+        "com.rickbusarow.ktlint:**",
+        "com.rickbusarow.ktrules:**"
+      ],
+      "groupName": "KtLint libs"
+    },
+  ]
+}

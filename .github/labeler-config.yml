@@ -1,0 +1,14 @@
+# see https://github.com/actions/labeler
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
+      - any-glob-to-any-file: "**/*.mdx"
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
+
+renovate:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**/renovate*"
