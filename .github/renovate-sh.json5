@@ -10,7 +10,10 @@
   autodiscoverFilter: [
     // TODO match the entire org's repos once done testing
     //    'rickbusarow/*',
-    '*busarow/kotlin-gradle*',
+    'RBusarow/kotlin-gradle-extensions',
+    'RBusarow/kgx',
+    'rickbusarow/kotlin-gradle-extensions',
+    'rickbusarow/kgx',
     'rickbusarow/rickbusarow-org-services'
   ]
 }
