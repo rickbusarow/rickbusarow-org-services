@@ -8,6 +8,9 @@
   platform: 'github',
   autodiscover: true,
   autodisoverFilter: [
-    'rickbusarow/kotlin-gradle-extensions'
+    // TODO match the entire org's repos once done testing
+    //    'rickbusarow/*',
+    'rickbusarow/kotlin-gradle-extensions',
+    'rickbusarow/rickbusarow-org-services'
   ],
 }
