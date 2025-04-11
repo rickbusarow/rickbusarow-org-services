@@ -2,7 +2,6 @@
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   branchPrefix: 'github-renovate/',
   dependencyDashboardTitle: 'Dependency Dashboard',
-  gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
   onboarding: true,
   onboardingBranch: 'github-renovate/configure',
   platform: 'github',
@@ -12,7 +11,6 @@
     //    'rickbusarow/*',
     'rickbusarow/kotlin-gradle-extensions',
     'rickbusarow/statik',
-    'rickbusarow/modulecheck',
     'rickbusarow/rickbusarow-org-services'
   ]
 }
