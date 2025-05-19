@@ -6,29 +6,29 @@
       datasourceTemplate: 'pnpm',
       depNameTemplate: 'semantic-release',
       description: 'Update semantic-release version used by npx',
-      fileMatch: [
-        '^\\.github/workflows/[^/]+\\.ya?ml$'
+      managerFilePatterns: [
+        '/^\\.github/workflows/[^/]+\\.ya?ml$/',
       ],
       matchStrings: [
-        '\\srun: npx semantic-release@(?<currentValue>.*?)\\s'
-      ]
-    }
+        '\\srun: npx semantic-release@(?<currentValue>.*?)\\s',
+      ],
+    },
   ],
   extends: [
     'config:recommended',
     'config:best-practices',
-    'default:disableRateLimiting'
+    'default:disableRateLimiting',
   ],
   labels: [
     'dependencies',
-    'automerge'
+    'automerge',
   ],
   packageRules: [
     {
       groupName: 'All GitHub Actions dependencies',
       matchManagers: [
-        'github-actions'
-      ]
+        'github-actions',
+      ],
     },
     {
       groupName: 'Kotlin and compiler plugins',
@@ -36,21 +36,21 @@
         'org.jetbrains.kotlin:**',
         'com.google.devtools.ksp:**',
         'com.square.anvil:**',
-        'dev.drewhamilton.poko:**'
-      ]
+        'dev.drewhamilton.poko:**',
+      ],
     },
     {
       groupName: 'KtLint libs',
       matchPackageNames: [
         'com.pinterest.ktlint:**',
         'com.rickbusarow.ktlint:**',
-        'com.rickbusarow.ktrules:**'
-      ]
-    }
+        'com.rickbusarow.ktrules:**',
+      ],
+    },
   ],
   rebaseLabel: 'rebase',
   rebaseWhen: 'auto',
   semanticCommitType: 'patch',
   semanticCommits: 'enabled',
-  stopUpdatingLabel: 'renovate-ignore'
+  stopUpdatingLabel: 'renovate-ignore',
 }
