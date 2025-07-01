@@ -36,7 +36,7 @@ jobs:
           owner: rickbusarow
 
       - name: Renovate
-        uses: renovatebot/github-action@c21017a4a2fc9f42953bcc907e375a5a544557ec # v41.0.18
+        uses: renovatebot/github-action@13da59cf7cfbd3bfea72ce26752ed22edf747ce9 # v43.0.2
         with:
           configurationFile: .github/renovate-sh.json5
           token: ${{ steps.app-token.outputs.token }}
