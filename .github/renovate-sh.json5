@@ -7,10 +7,9 @@
   platform: 'github',
   autodiscover: true,
   autodiscoverFilter: [
-    // TODO match the entire org's repos once done testing
-    //    'rickbusarow/*',
-    //    'rickbusarow/kotlin-gradle-extensions',
-    //    'rickbusarow/statik',
-    'rickbusarow/rickbusarow-org-services'
+    'rickbusarow/*'
+    // 'rickbusarow/kotlin-gradle-extensions',
+    // 'rickbusarow/statik',
+    // 'rickbusarow/rickbusarow-org-services'
   ]
 }
