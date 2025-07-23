@@ -5,16 +5,12 @@ on:
     # every 2 hours
     - cron: "0 */2 * * *"
   workflow_dispatch:
-  issues:
   pull_request:
     branches:
       - renovate/*
     types:
       # run when the little "click here to rebase" box is checked.
       - edited
-  push:
-    branches:
-      - main
 
 concurrency:
   group: renovate
